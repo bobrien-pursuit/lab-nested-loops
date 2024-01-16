@@ -1,3 +1,8 @@
+const { arrayBuffer } = require("stream/consumers");
+const examplegridCalc = require("./data/gridCalc");
+const exampleSchedule = require("./data/schedule");
+const { get } = require("http");
+
 /// Problem 1: Count Zeroes
 /**
  * Counts the number of zeroes in a 2D array.
@@ -71,9 +76,71 @@ function logGridCoordinates(matrix) {
 
 function organizeSchedule(schedule) {
   // Function implementation.
-}
 
+  let organizedScheduleArr = {};
+    
+      for (let i = 0; i < schedule.length; i++)
+        for (let j = 0; j < schedule[i].length; j++){
+           switch(i){
 
+           case 0:
+           if(organizedScheduleArr.hasOwnProperty('Monday'))
+           organizedScheduleArr.Monday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           else {
+           organizedScheduleArr.Monday = [];
+           organizedScheduleArr.Monday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           }
+           break; 
+
+           case 1:
+           if(organizedScheduleArr.hasOwnProperty('Tuesday'))
+           organizedScheduleArr.Tuesday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           else {
+           organizedScheduleArr.Tuesday = [];
+           organizedScheduleArr.Tuesday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           }
+           break; 
+           
+           case 2:
+           if(organizedScheduleArr.hasOwnProperty('Wednesday'))
+           organizedScheduleArr.Wednesday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           else {
+           organizedScheduleArr.Wednesday = [];
+           organizedScheduleArr.Wednesday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           }
+           break;
+           
+           case 3:
+           if(organizedScheduleArr.hasOwnProperty('Thursday'))
+           organizedScheduleArr.Thursday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           else {
+           organizedScheduleArr.Thursday = [];
+           organizedScheduleArr.Thursday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           }
+           break;
+           
+           case 4:
+           if(organizedScheduleArr.hasOwnProperty('Friday'))
+           organizedScheduleArr.Friday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           else{
+           organizedScheduleArr.Friday = [];
+           organizedScheduleArr.Friday.push(schedule[i][j].subject + ' with ' + schedule[i][j].teacher);
+           }
+           break;
+           
+           default:
+
+           break;
+           }
+      
+        }
+        
+        
+        return organizedScheduleArr;
+        
+      }
+      console.log(organizeSchedule(exampleSchedule));
+      
 /// Problem 5: Grid Function Calculator (Challenging)
 /**
  * Calculates the sum of results from a grid of functions. You will need to import the grid from data/gridCalc.js.
@@ -84,8 +151,8 @@ function organizeSchedule(schedule) {
 
 function calculateGridFunctions(grid) {
   // Function implementation.
+  return grid;
 }
-
 
 
 module.exports = {
