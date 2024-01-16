@@ -9,6 +9,14 @@
  */
 function countZeroes(matrix) {
   // Function implementation.
+  let count = 0;
+
+  for(let i=0; i < matrix.length; i++)
+    for(let j=0; j < matrix[i].length; j++)
+        if(matrix[i][j] == 0)
+            count++;
+
+            return count;
 }
 
 
@@ -24,6 +32,14 @@ function countZeroes(matrix) {
  */
 function findElement(matrix, element) {
   // Function implementation.
+  for (let i=0; i < matrix.length; i++)
+    for (let j=0; j < matrix[i].length; j++)
+          if (element == matrix[i][j])
+              return `Element found at row ${i}, column ${j}`;
+          else
+            continue;
+
+            return 'Element not found'
 }
 
 
@@ -39,6 +55,9 @@ function findElement(matrix, element) {
 
 function logGridCoordinates(matrix) {
   // Function implementation.
+  for (let r = 0; r < matrix.length; r++)
+    for (let c = 0; c < matrix[r].length; c++)
+      console.log(`Element at row ${r}, column ${c} is ${matrix[r][c]}`);
 }
 
 
