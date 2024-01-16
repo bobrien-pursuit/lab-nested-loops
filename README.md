@@ -72,4 +72,4 @@ node index.js
 ```
 
 The output will be displayed in your terminal.
-```
+
