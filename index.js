@@ -1,5 +1,3 @@
-
-
 /// Problem 1: Count Zeroes
 /**
  * Counts the number of zeroes in a 2D array.
