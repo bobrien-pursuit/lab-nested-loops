@@ -162,8 +162,6 @@ function organizeSchedule(schedule) {
        return sum;
       }
       
-      console.log(calculateGridFunctions(examplegridCalc));
-      
       module.exports = {
     countZeroes,
     findElement,
