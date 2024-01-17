@@ -80,7 +80,9 @@ function organizeSchedule(schedule) {
   let organizedScheduleArr = {};
     
       for (let i = 0; i < schedule.length; i++)
-        for (let j = 0; j < schedule[i].length; j++){
+        for (let j = 0; j < schedule[i].length; j++)
+      
+            {
            switch(i){
 
            case 0:
@@ -139,23 +141,30 @@ function organizeSchedule(schedule) {
         return organizedScheduleArr;
         
       }
-      console.log(organizeSchedule(exampleSchedule));
       
-/// Problem 5: Grid Function Calculator (Challenging)
-/**
- * Calculates the sum of results from a grid of functions. You will need to import the grid from data/gridCalc.js.
- * @param {Object[][]} grid - A 2D array where each element is an object containing a function and its parameters.
- * @returns {number} - The sum of the results of all functions in the grid.
- * @example See tests in Jests in index.test.js for examples.
- */
-
-function calculateGridFunctions(grid) {
-  // Function implementation.
-  return grid;
-}
-
-
-module.exports = {
+      /// Problem 5: Grid Function Calculator (Challenging)
+      /**
+       * Calculates the sum of results from a grid of functions. You will need to import the grid from data/gridCalc.js.
+       * @param {Object[][]} grid - A 2D array where each element is an object containing a function and its parameters.
+       * @returns {number} - The sum of the results of all functions in the grid.
+       * @example See tests in Jests in index.test.js for examples.
+      */
+     
+     function calculateGridFunctions(grid) {
+       // Function implementation.
+        let sum = 0;
+       for (let element of grid)
+        for(let obj of element)
+            for(let key in obj){
+              if(typeof obj[key] == 'function')
+                  sum += obj[key](...obj.params);
+            }
+       return sum;
+      }
+      
+      console.log(calculateGridFunctions(examplegridCalc));
+      
+      module.exports = {
     countZeroes,
     findElement,
     logGridCoordinates,
